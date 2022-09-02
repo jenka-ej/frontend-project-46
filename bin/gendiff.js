@@ -5,7 +5,9 @@ import {Command } from 'commander/esm.mjs';
 const program = new Command();
 
 program
-  .version('0.1.0')
-  .description('Compare two configuration files and shows a difference.');
+  .version('0.1.0, output the version number')
+  .description('Compare two configuration files and shows a difference.')
+  .arguments('<filepath1> <filepath2>')
+  .option('-f, --format <type>', 'output format');
 
 program.parse(process.argv);
