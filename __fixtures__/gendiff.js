@@ -6,24 +6,19 @@ const difference = (obj1, obj2) => {
   for (const key2 in obj2) {
     result.push(key2);
   }
-  const sort_result = result.sort();
-  const final_result = sort_result.filter((item, index) => sort_result.indexOf(item) === index);
-  const differenceobj = {};
-  final_result.map((uniquekey) => {
-    if (obj1.hasOwnProperty(uniquekey) && obj2.hasOwnProperty(uniquekey)) {
-      if (obj1[uniquekey] === obj2[uniquekey]) {
-        differenceobj[`    ${uniquekey}`] = obj1[uniquekey];
+  const sort = result.sort();
+  const final = sort.filter((item, index) => sort.indexOf(item) === index);
+  final.map((key) => {
+    if (obj1.hasOwnProperty(key) && obj2.hasOwnProperty(key)) {
+      if (obj1[key] === obj2[key]) {
+        return `    ${key}: ${obj1[key]}`;
       } else {
-        differenceobj[`  - ${uniquekey}`] = obj1[uniquekey];
-        differenceobj[`  + ${uniquekey}`] = obj2[uniquekey];
+        return `  - ${key}: ${obj1[key]}\n  + ${key}: ${obj2[key]}`;
       }
-    } else if (obj1.hasOwnProperty(uniquekey)) {
-      differenceobj[`  - ${uniquekey}`] = obj1[uniquekey];
+    } else if (obj1.hasOwnProperty(key)) {
+      return `  - ${key}: ${obj1[key]}`;
     } else {
-      differenceobj[`  + ${uniquekey}`] = obj2[uniquekey];
+      return `  + ${key}: ${obj2[key]}`;
     }
-  });
-  const strdiff = JSON.stringify(differenceobj);
-  const strdiff_result = strdiff.split(',').join('\n').split('"').join('').split(':').join(': ').split('{').join('{\n').split('}').join('\n}');
-  return strdiff_result;
+  }
 };
