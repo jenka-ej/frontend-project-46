@@ -15,7 +15,7 @@ const compareData = (file1, file2) => {
         diffobj[`    ${key}`] = file1[key];
       } else {
         diffobj[`  - ${key}`] = file1[key];
-	diffobj[`  + ${key}`] = file2[key];
+        diffobj[`  + ${key}`] = file2[key];
       }
     } else if (file1.hasOwnProperty(key)) {
       diffobj[`  - ${key}`] = file1[key];
@@ -24,7 +24,13 @@ const compareData = (file1, file2) => {
     }
   });
   const strdiff = JSON.stringify(diffobj);
-  const strdiff_result = strdiff.split(',').join("\n").split('"').join('').split(':').join(': ').split('{').join('{\n').split('}').join('\n}');
+  const strdiff_result = strdiff.split(',').join('\n').split('"').join('')
+    .split(':')
+    .join(': ')
+    .split('{')
+    .join('{\n')
+    .split('}')
+    .join('\n}');
   return strdiff_result;
 };
 export default compareData;
