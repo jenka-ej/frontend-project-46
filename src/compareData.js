@@ -4,7 +4,8 @@ const compareData = (file1, file2) => {
   const sort = result.flat(1).sort();
   const final = sort.filter((item, index) => sort.indexOf(item) === index);
   const diffobj = {};
-  final.map((key) => {
+  for (let i = 0; i < final.length; i += 1) {
+    const key = final[i];
     if (file1.hasOwnProperty(key) && file2.hasOwnProperty(key)) {
       if (file1[key] === file2[key]) {
         diffobj[`    ${key}`] = file1[key];
@@ -17,7 +18,7 @@ const compareData = (file1, file2) => {
     } else {
       diffobj[`  + ${key}`] = file2[key];
     }
-  });
+  }
   const strdiff = JSON.stringify(diffobj);
   const strdiff_result = strdiff.split(',').join('\n').split('"').join('')
     .split(':')
