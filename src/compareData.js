@@ -1,12 +1,7 @@
 const compareData = (file1, file2) => {
   const result = [];
-  for (const key1 in file1) {
-    result.push(key1);
-  }
-  for (const key2 in file2) {
-    result.push(key2);
-  }
-  const sort = result.sort();
+  result.push(Object.keys(file1), Object.keys(file2));
+  const sort = result.flat(1).sort();
   const final = sort.filter((item, index) => sort.indexOf(item) === index);
   const diffobj = {};
   final.map((key) => {
