@@ -13,5 +13,6 @@ program
   .option('-f, --format <type>', 'output format')
   .action((filepath1, filepath2, options) => {
     genDiff(filepath1, filepath2, options.format);
-  })
-  .parse(process.argv);
+  });
+
+program.parse(process.argv);
