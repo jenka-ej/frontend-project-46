@@ -19,4 +19,3 @@ test('test to compare the actual and desired results', () => {
   const actual = genDiff(getFixturePath('file1.json'), getFixturePath('file2.json'));
   expect(actual).toEqual(expected);
 });
-	
