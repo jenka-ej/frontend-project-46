@@ -6,27 +6,29 @@ const compareData = (file1, file2) => {
   const diffobj = {};
   for (let i = 0; i < final.length; i += 1) {
     const key = final[i];
-    if (file1.hasOwnProperty(key) && file2.hasOwnProperty(key)) {
+    const firstObjectHasKey = Object.getOwnPropertyDescriptor(file1, key);
+    const secondObjectHasKey = Object.getOwnPropertyDescriptor(file2, key);
+    if (firstObjectHasKey && secondObjectHasKey) {
       if (file1[key] === file2[key]) {
         diffobj[`    ${key}`] = file1[key];
       } else {
         diffobj[`  - ${key}`] = file1[key];
         diffobj[`  + ${key}`] = file2[key];
       }
-    } else if (file1.hasOwnProperty(key)) {
+    } else if (firstObjectHasKey) {
       diffobj[`  - ${key}`] = file1[key];
     } else {
       diffobj[`  + ${key}`] = file2[key];
     }
   }
   const strdiff = JSON.stringify(diffobj);
-  const strdiff_result = strdiff.split(',').join('\n').split('"').join('')
+  const strdiffResult = strdiff.split(',').join('\n').split('"').join('')
     .split(':')
     .join(': ')
     .split('{')
     .join('{\n')
     .split('}')
     .join('\n}');
-  return strdiff_result;
+  return strdiffResult;
 };
 export default compareData;
