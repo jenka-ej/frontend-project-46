@@ -4,11 +4,13 @@ const diff = (obj1, obj2) => {
   const childrenObj1 = getChildren(obj1);
   const childrenObj2 = getChildren(obj2);
   const childrenMass = childrenObj1.concat(childrenObj2);
-  const resultMass = childrenMass.filter((child, index) => childrenMass.indexOf(child) === index).sort();
+  const resultMass = childrenMass.filter((child, index) =>  {
+    childrenMass.indexOf(child) === index).sort();
+  };
 
   const cb = (acc, key) => {
-    const obj1HasKey = obj1.hasOwnProperty(key);
-    const obj2HasKey = obj2.hasOwnProperty(key);
+    const obj1HasKey = Object.getOwnPropertyDescriptor(obj1, key);
+    const obj2HasKey = Object.getOwnPropertyDescriptor(obj2, key);
     const value1 = obj1[key];
     const value2 = obj2[key];
     const obj1KeyIsObject = (typeof value1 === 'object' && value1 !== null && !Array.isArray(value1));
