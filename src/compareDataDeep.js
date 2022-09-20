@@ -5,7 +5,7 @@ const diff = (obj1, obj2) => {
   const childrenObj2 = getChildren(obj2);
   const childrenMass = childrenObj1.concat(childrenObj2);
   const resultMass = childrenMass.filter((child, index) =>  {
-    childrenMass.indexOf(child) === index);
+    childrenMass.indexOf(child) === index;
   }).sort();
 
   const cb = (acc, key) => {
