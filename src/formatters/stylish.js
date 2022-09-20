@@ -1,5 +1,5 @@
 const goodView = (obj) => {
-  return JSON.stringify(obj, null, 4).split('"').join('').split(',').join('')
+  return JSON.stringify(obj).split('{').join('{\n    ').split('"').join('').split(',').join('')
     .split('  + ')
     .join('+ ')
     .split('  - ')
