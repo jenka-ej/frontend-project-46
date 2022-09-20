@@ -13,9 +13,12 @@ const readFile = (file) => {
   return content;
 };
 
+const firstJSON = getFixturePath('file1.json');
+const secondJSON = getFixturePath('file2.json');
+
 const expectedStylish = readFile('resultStylish.txt');
 
 test('test to compare the actual and desired results', () => {
-  const actual = genDiff(getFixturePath('file1.json'), getFixturePath('file2.json'));
+  const actual = genDiff(firstJSON, secondJSON, 'stylish');
   expect(actual).toEqual(expectedStylish);
 });
