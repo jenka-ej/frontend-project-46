@@ -16,7 +16,7 @@ const readFile = (file) => {
 const firstJSON = getFixturePath('file1.json');
 const secondJSON = getFixturePath('file2.json');
 
-const expectedStylish = readFile('resultStylish.txt');
+const expectedStylish = readFileSync(getFixturePath('resultStylish.txt'), 'utf-8');
 
 test('test to compare the actual and desired results', () => {
   const actual = genDiff(firstJSON, secondJSON, 'stylish');
