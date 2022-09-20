@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import compareData from './compareData.js';
+import goodView from './formatters/stylish.js';
 
 const getExtension = (filepath) => path.extname(filepath);
 const getAbsolutePath = (filepath) => path.resolve(filepath);
