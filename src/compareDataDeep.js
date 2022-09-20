@@ -1,4 +1,4 @@
-const diff = (obj1, obj2) => {
+const compareData = (obj1, obj2) => {
   const getChildren = (obj) => Object.keys(obj);
   const childrenObj1 = getChildren(obj1);
   const childrenObj2 = getChildren(obj2);
@@ -45,3 +45,4 @@ const diff = (obj1, obj2) => {
   };
   return final.reduce(cb, {});
 };
+export default compareData;
