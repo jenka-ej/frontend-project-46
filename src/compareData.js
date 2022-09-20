@@ -1,4 +1,4 @@
-import goodView from 'formatters/stylish.js';
+import goodView from './formatters/stylish.js';
 const compareData = (obj1, obj2) => {
   const getChildren = (obj) => Object.keys(obj);
   const childrenObj1 = getChildren(obj1);
