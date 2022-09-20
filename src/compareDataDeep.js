@@ -1,11 +1,9 @@
 const diff = (obj1, obj2) => {
   const getChildren = (obj) => Object.keys(obj);
-
   const childrenObj1 = getChildren(obj1);
   const childrenObj2 = getChildren(obj2);
   const childrenMass = childrenObj1.concat(childrenObj2);
   const final = childrenMass.filter((child, index) => childrenMass.indexOf(child) === index).sort();
-
   const cb = (acc, key) => {
     const obj1HasKey = Object.getOwnPropertyDescriptor(obj1, key);
     const obj2HasKey = Object.getOwnPropertyDescriptor(obj2, key);
