@@ -14,7 +14,7 @@ const genDiff = (fpath1, fpath2) => {
   const parsedFile1 = JSON.parse(readFileSync(getAbsolutePath(fpath1)), ext1);
   const parsedFile2 = JSON.parse(readFileSync(getAbsolutePath(fpath2)), ext2);
 
-  return goodView(compareData(parsedFile1, parsedFile2));
+  console.log(goodView(compareData(parsedFile1, parsedFile2)));
 };
 
 export default genDiff;
