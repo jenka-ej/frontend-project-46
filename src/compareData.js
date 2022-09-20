@@ -45,7 +45,7 @@ const compareData = (obj1, obj2) => {
     acc[`+ ${key}`] = value2;
     return acc;
   };
-  const finalresult = final.reduce(cb, {});
-  return goodView(finalresult);
+  return final.reduce(cb, {});
+  //return goodView(finalresult);
 };
 export default compareData;
