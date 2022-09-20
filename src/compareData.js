@@ -13,7 +13,7 @@ const compareData = (obj1, obj2) => {
     const obj1KeyIsObject = (typeof value1 === 'object' && value1 !== null && !Array.isArray(value1));
     const obj2KeyIsObject = (typeof value2 === 'object' && value2 !== null && !Array.isArray(value2));
     if (obj1HasKey && obj2HasKey && obj1KeyIsObject && obj2KeyIsObject) {
-      acc[`${key}`] = diff(value1, value2);
+      acc[`${key}`] = compareData(value1, value2);
       return acc;
     } if (obj1HasKey && obj2HasKey && obj1KeyIsObject && !obj2KeyIsObject) {
       acc[`- ${key}`] = value1;
