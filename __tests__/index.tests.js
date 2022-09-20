@@ -20,5 +20,5 @@ const expectedStylish = readFile('resultStylish.txt');
 
 test('test to compare the actual and desired results', () => {
   const actual = genDiff(firstJSON, secondJSON, 'stylish');
-  expect(actual).toEqual(expectedStylish);
+  expect(actual).toEqual(expectedStylish.trim());
 });
