@@ -1,5 +1,5 @@
 const goodView = (obj) => {
-  const objToStr = JSON.stringify(obj, null, 4);
+  const objToStr = JSON.stringify(obj, null, '    ');
   const goodResult = objToStr.split('"').join('').split(',').join('')
     .split('  + ')
     .join('+ ')
