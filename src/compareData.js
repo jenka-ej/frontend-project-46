@@ -1,3 +1,4 @@
+import goodView from 'formatters/stylish.js';
 const compareData = (obj1, obj2) => {
   const getChildren = (obj) => Object.keys(obj);
   const childrenObj1 = getChildren(obj1);
@@ -43,6 +44,7 @@ const compareData = (obj1, obj2) => {
     acc[`+ ${key}`] = value2;
     return acc;
   };
-  return final.reduce(cb, {});
+  const finalresult = final.reduce(cb, {});
+  return goodView(finalresult);
 };
 export default compareData;
