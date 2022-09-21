@@ -6,6 +6,7 @@ const parser = (file, type) => {
     case 'yaml':
       return yaml.load(file);
     case 'json':
+    default:
       return JSON.parse(file);
   }
 };
