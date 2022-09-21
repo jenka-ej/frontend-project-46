@@ -11,4 +11,4 @@ Difference Calculator is a program that determines the difference between two da
 Enter gendiff -h for help. Enter gendiff path/to/file.yml another/path/file.json for default stylish format report. Enter gendiff --format plain/json path/to/file.yml another/path/file.json for plain or json format report.
 
 Asciinema of gendiff for flat json files
-https://asciinema.org/a/9FACSSpmL0Twmhmrgb3NLQvCW
+[![asciicast](https://asciinema.org/a/9FACSSpmL0Twmhmrgb3NLQvCW.svg)](https://asciinema.org/a/9FACSSpmL0Twmhmrgb3NLQvCW)
