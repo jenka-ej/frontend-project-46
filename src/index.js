@@ -15,7 +15,7 @@ const genDiff = (fpath1, fpath2, formatName = 'stylish') => {
   const parsedFile1 = parser(readFileSync(getAbsolutePath(fpath1)), ext1);
   const parsedFile2 = parser(readFileSync(getAbsolutePath(fpath2)), ext2);
 
-  const differences = compareData((parsedFile1, parsedFile2), formatName);
+  const differences = getFormat(compareData(parsedFile1, parsedFile2), formatName);
   return differences;
 };
 
