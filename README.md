@@ -8,5 +8,7 @@
 Difference Calculator is a program that determines the difference between two data structures.
 
 ### Utility features:
-
 Support for different input formats: yaml, json Report generation in the form of plain text, stylish and json
+
+### How to use:
+Enter gendiff -h for help. Enter gendiff path/to/file.yml another/path/file.json for default stylish format report. Enter gendiff --format plain/json path/to/file.yml another/path/file.json for plain or json format report.
