@@ -100,6 +100,7 @@ const plain = (objDiff) => {
       }
       return `Property '${key}' was updated. From '${value1}' to '${value2}'`;
     }
+    return null;
   });
   const plainResultText = JSON.stringify(text(finalResult)).split('"').join('')
     .split(',')
