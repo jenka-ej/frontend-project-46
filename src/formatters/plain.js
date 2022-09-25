@@ -32,6 +32,7 @@ const plain = (objDiff) => {
         const signKey = key.slice(2, key.length);
         return result.push([sign, `${path}.${signKey}`, value]);
       }
+      return;
     });
   };
   plainObjToText(objDiff, '');
