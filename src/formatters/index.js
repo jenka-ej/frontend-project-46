@@ -1,4 +1,5 @@
 import goodView from './stylish.js';
+import plain from './plain.js';
 
 const getFormat = (data, format) => {
   switch (format) {
@@ -6,6 +7,8 @@ const getFormat = (data, format) => {
       return goodView(data, 0);
     case 'json':
       return JSON.stringify(data);
+    case 'plain':
+      return plain(data, 0);
     default:
       throw new Error(`${format} is not supported`);
   }
