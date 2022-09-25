@@ -1,7 +1,7 @@
 const plain = (objDiff) => {
   const result = [];
   const plainObjToText = (obj, path) => {
-    const getChildren = (obj) => Object.keys(obj);
+    const getChildren = (obj1) => Object.keys(obj1);
     const childrenObj = getChildren(obj);
     childrenObj.map((key) => {
       const value = obj[key];
