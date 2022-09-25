@@ -119,3 +119,4 @@ const plain = (objDiff) => {
     const finalResultText = plainResultText.slice(1, plainResultText.length - 1)
     return finalResultText;
 };
+export default plain;
