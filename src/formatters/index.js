@@ -8,7 +8,7 @@ const getFormat = (data, format) => {
     case 'json':
       return JSON.stringify(data);
     case 'plain':
-      return plain(data, 0);
+      return plain(data);
     default:
       throw new Error(`${format} is not supported`);
   }
