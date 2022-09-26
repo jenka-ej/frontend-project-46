@@ -76,11 +76,13 @@ const plain = (objDiff) => {
       const valueS1 = (value1 === true
                       || value1 === false
                       || value1 === null
-                      || value1 === '[complex value]');
+                      || value1 === '[complex value]'
+                      || !isNaN(value1));
       const valueS2 = (value2 === true
                       || value2 === false
                       || value2 === null
-                      || value2 === '[complex value]');
+                      || value2 === '[complex value]'
+                      || !isNaN(value2));
       if (value1 === '') {
         if (valueS2) {
           return `Property '${key}' was updated. From '' to ${value2}`;
