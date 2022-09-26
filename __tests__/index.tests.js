@@ -53,3 +53,11 @@ test('#7 difference default format test between JSON files', () => {
 test('#8 difference default format test between YML files', () => {
   expect(genDiff(firstYML, secondYML)).toEqual(expectedStylish);
 });
+
+test('#9 difference default format test between JSON and YML files', () => {
+  expect(genDiff(firstJSON, secondYML)).toEqual(expectedStylish);
+});
+
+test('#10 difference plain format test between YML and JSON files', () => {
+  expect(genDiff(firstYML, secondJSON, 'plain')).toEqual(expectedPlain);
+});
