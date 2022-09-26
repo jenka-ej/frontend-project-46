@@ -15,3 +15,6 @@ Enter gendiff -h for help. Enter gendiff path/to/file.yml another/path/file.json
 
 ### Asciinema of gendiff for flat YML files
 [![asciicast](https://asciinema.org/a/AX3KuqtTqapIwpGTD0rWhRaZd.svg)](https://asciinema.org/a/AX3KuqtTqapIwpGTD0rWhRaZd)
+
+### Asciinema of gendiff for nested JSON and YML files + test & test-coverage
+[![asciicast](https://asciinema.org/a/Pe6QypnLEmFWssNAjCOJN1iii.svg)](https://asciinema.org/a/Pe6QypnLEmFWssNAjCOJN1iii)
