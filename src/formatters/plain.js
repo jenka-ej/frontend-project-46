@@ -1,5 +1,5 @@
 const addChild = (child) => {
-  if ((_.isObject(child)) || !typeof child === 'null') {
+  if (typeof child === 'object' && child !== null && !Array.isArray(child)) {
     return '[complex value]';
   }
   if (typeof child === 'string') {
@@ -14,7 +14,7 @@ const plain = (array, accum = '') => {
     const obj = array[key];
 
     if (obj.type === 'parent') {
-      return plainFormat(obj.children, `${accum}${obj.key}.`);
+      return plain(obj.children, `${accum}${obj.key}.`);
     }
     if (obj.type === 'deleted') {
       return `Property '${accum + obj.key}' was removed`;
