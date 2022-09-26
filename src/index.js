@@ -5,7 +5,6 @@ import parser from './parser.js';
 import getFormat from './formatters/index.js';
 
 const getPath = (way) => path.resolve(process.cwd(), way);
-const getExtension = (filepath) => path.extname(filepath);
 
 const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   const absolutePath1 = getPath(filepath1);
@@ -14,11 +13,8 @@ const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   const content1 = fs.readFileSync(absolutePath1, 'utf-8');
   const content2 = fs.readFileSync(absolutePath2, 'utf-8');
 
-  const ext1 = getExtension(filepath1);
-  const ext2 = getExtension(filepath2);
-
-  const parsedFile1 = parser(content1, ext1);
-  const parsedFile2 = parser(content2, ext2);
+  const parsedFile1 = parser(content1, filepath1.split('.')[1]);
+  const parsedFile2 = parser(content2, filepath2.split('.')[1]);
 
   const differences = getFormat(compareData(parsedFile1, parsedFile2), formatName);
   return differences;
