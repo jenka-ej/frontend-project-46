@@ -15,7 +15,7 @@ const compareData = (obj1, obj2) => {
             return {
                 'type': 'parent',
                 key,
-                'children': diff(value1, value2)
+                'children': compareData(value1, value2)
             };
         } if (obj1HasKey && obj2HasKey && obj1KeyIsObject && !obj2KeyIsObject) {
             return {
