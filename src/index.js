@@ -13,7 +13,7 @@ const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
 
   const content1 = fs.readFileSync(absolutePath1, 'utf-8');
   const content2 = fs.readFileSync(absolutePath2, 'utf-8');
-  
+
   const ext1 = getExtension(filepath1);
   const ext2 = getExtension(filepath2);
 
