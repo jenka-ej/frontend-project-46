@@ -15,7 +15,8 @@
   "homepage": "https://github.com/jenka-ej/frontend-project-46#readme",
   "dependencies": {
     "commander": "^9.4.0",
-    "js-yaml": "^4.1.0"
+    "js-yaml": "^4.1.0",
+    "lodash": "^4.17.21"
   },
   "type": "module",
   "bin": {
