@@ -7,6 +7,9 @@
 ### Description:
 Difference Calculator is a program that determines the difference between two data structures.
 
+### Technology stack:
+JavaScript, Git, GitHub, GitHub Actions (CI), ESLint, Lodash, Commander.js, Js-yaml, CodeClimate, Asciinema.
+
 ### How to use:
 Enter gendiff -h for help. Enter gendiff path/to/file.yml another/path/file.json for default stylish format report. Enter gendiff --format plain/json path/to/file.yml another/path/file.json for plain or json format report.
 
